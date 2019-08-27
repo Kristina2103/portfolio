@@ -1,5 +1,6 @@
 @import "config";
 @import "menu";
+
 * {
   box-sizing: border-box;
 }
@@ -40,6 +41,7 @@ header {
   color: $secondary-color;
 }
 main {
+  margin-left: 30px;
   padding: 24px;
   height: 100%;
   .icons {
@@ -59,3 +61,4 @@ main {
     }
   }
 }
+@import "mobile";
