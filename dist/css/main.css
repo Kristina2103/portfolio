@@ -315,7 +315,11 @@ h1 {
     #portfolio .projects .item {
       flex-basis: 100%; }
       #portfolio .projects .item .project-img .back {
-        transform: rotateY(0deg); } }
+        transform: rotateY(0deg);
+        height: auto;
+        position: relative; }
+        #portfolio .projects .item .project-img .back .date {
+          position: relative; } }
 
 @media screen and (max-width: 500px) {
   h1.lg-heading,

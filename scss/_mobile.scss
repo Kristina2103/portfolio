@@ -51,6 +51,11 @@
         .project-img {
           .back {
             transform: rotateY(0deg);
+            height: auto;
+            position: relative;
+            .date {
+              position: relative;
+            }
           }
         }
       }
