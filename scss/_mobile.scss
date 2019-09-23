@@ -56,6 +56,9 @@
             .date {
               position: relative;
             }
+            &:hover .back {
+              transform: none;
+            }
           }
         }
       }

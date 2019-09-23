@@ -319,7 +319,9 @@ h1 {
         height: auto;
         position: relative; }
         #portfolio .projects .item .project-img .back .date {
-          position: relative; } }
+          position: relative; }
+        #portfolio .projects .item .project-img .back:hover .back {
+          transform: none; } }
 
 @media screen and (max-width: 500px) {
   h1.lg-heading,
