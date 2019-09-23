@@ -6,8 +6,7 @@
 }
 body {
   @include background();
-  background-color: $primary-color;
-  color: #fff;
+  color: set-text-color($primary-color);
   margin: 0;
   height: 100%;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
@@ -29,9 +28,11 @@ h3 {
   }
 }
 a {
-  color: #fff;
+  color: set-text-color($primary-color);
   text-decoration: none;
+  cursor: pointer;
 }
+
 header {
   position: fixed;
   z-index: 2;
@@ -45,7 +46,7 @@ main {
   padding: 24px;
   height: 100%;
   .icons {
-    margin-top: 16px;
+    margin-top: 30px;
     a {
       padding: 8px;
       &:hover {
@@ -58,6 +59,154 @@ main {
     overflow: hidden;
     h1 {
       margin-top: 20vh;
+    }
+  }
+}
+
+h1 {
+  margin: 40px 0 0;
+}
+//About
+.about-info {
+  display: grid;
+  grid-gap: 30px;
+  grid-template-areas: "aboutImg aboutHeading aboutHeading" "job1 job2 job3";
+  grid-template-columns: repeat(3, 1fr);
+}
+.about-img {
+  grid-area: aboutImg;
+  margin: auto;
+  border-radius: 50%;
+  width: 230px;
+  border: $secondary-color 3px solid;
+}
+.about-heading {
+  grid-area: aboutHeading;
+}
+.job-1 {
+  grid-area: job1;
+}
+.job-2 {
+  grid-area: job2;
+}
+.job-3 {
+  grid-area: job3;
+}
+.job {
+  background: lighten($primary-color, 5);
+  border-left: $secondary-color 3px solid;
+  padding: 10px;
+  h3 a {
+    color: $secondary-color;
+  }
+  h3 a:hover {
+    color: #fff;
+  }
+}
+.role {
+  font-family: $text-slanted;
+}
+.technologies {
+  padding: 0;
+  li {
+    font-size: 0.8rem;
+    border: $secondary-color 1px solid;
+    padding: 5px;
+    display: inline-block;
+    margin-bottom: 5px;
+  }
+}
+.job-desc {
+  font-weight: 200;
+}
+//Portfoio
+.text-bold {
+  font-weight: 700;
+}
+#portfolio {
+  margin: 0;
+  .projects {
+    img {
+      width: 100%;
+      height: 100%;
+    }
+    display: flex;
+    flex-flow: row;
+    flex-wrap: wrap;
+
+    .item {
+      margin: 10px;
+      align-content: center;
+      justify-content: center;
+      display: flex;
+      flex-flow: column;
+      flex-grow: 0;
+      flex-shrink: 1;
+      flex-basis: calc(33.333% - 20px);
+      .title {
+        background: $secondary-color;
+        padding: 5px;
+        text-align: center;
+        color: $primary-color;
+        font-weight: 500;
+      }
+      .project-img {
+        position: relative;
+        &:hover .front {
+          transform: rotateY(90deg);
+          transition: transform 0.5s ease-out;
+        }
+        &:hover .back {
+          transform: rotateY(90deg);
+          transform: rotateY(0deg);
+          transition: transform 0.5s 0.5s ease-in;
+        }
+        .front {
+          transition: transform 0.3s 0.3s ease-out;
+        }
+        .back {
+          transition: transform 0.3s ease-out;
+          transform: rotateY(90deg);
+          opacity: 1;
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          background: $primary-color;
+          top: 0;
+          left: 0;
+          display: flex;
+          justify-content: center;
+          flex-flow: column;
+          align-items: center;
+          list-style-type: none;
+          padding: 10px;
+          text-align: center;
+        }
+        .back {
+          a {
+            background: #fff;
+            color: $primary-color;
+            border: 1px solid $primary-color;
+            padding: 5px 10px;
+            border-radius: 7%;
+            margin-bottom: 7px;
+          }
+          p {
+            font-size: 0.7rem;
+          }
+          .date {
+            position: absolute;
+            bottom: 0;
+            color: lighten($primary-color, 15);
+          }
+        }
+        & a:hover {
+          background: $primary-color;
+          border: 1px solid $secondary-color;
+          color: #fff;
+          transition: all 0.3s ease-in;
+        }
+      }
     }
   }
 }
