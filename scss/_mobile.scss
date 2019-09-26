@@ -56,9 +56,10 @@
             .date {
               position: relative;
             }
-            &:hover .back {
-              transform: none;
-            }
+          }
+          &:hover .back,
+          &:hover .front {
+            transform: none;
           }
         }
       }
